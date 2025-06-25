@@ -62,6 +62,7 @@ function handleValueEvent(value) {
     case "9":
 
     // Handle all number buttons
+    
       if (currentInput === "0" || justEvaluated) {
         currentInput = value;
         justEvaluated = false;

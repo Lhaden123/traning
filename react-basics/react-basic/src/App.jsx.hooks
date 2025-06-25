@@ -1,0 +1,120 @@
+import { useEffect, useState } from "react";
+import "./App.css";
+
+const App = () => {
+  const [todos, setTodos] = useState([]);
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [note, setNote] = useState("");
+
+  useEffect(() => {
+    const data = localStorage.getItem("lwp-todo");
+    setTodos(data ? JSON.parse(data) : []);
+  }, []);
+
+  const addTodo = () => {
+    if (!title.trim()) {
+      alert("Title cannot be empty");
+      return;
+    }
+    const newTodo = {
+      id: Date.now(),
+      title,
+      description,
+      note,
+      completed: false,
+    };
+
+    const updatedTodos = [newTodo, ...todos];
+
+    setTodos(updatedTodos);
+    setTitle("");
+    setDescription("");
+    setNote("");
+    localStorage.setItem("lwp-todo", JSON.stringify(updatedTodos));
+  };
+
+  const deleteTodo = (id) => {
+    const updatedTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(updatedTodos);
+    localStorage.setItem("lwp-todo", JSON.stringify(updatedTodos));
+  };
+
+  const completeTodo = (id) => {
+    const updatedTodos = todos.map((todo) =>
+      todo.id === id ? { ...todo, completed: true } : todo
+    );
+    setTodos(updatedTodos);
+    localStorage.setItem("lwp-todo", JSON.stringify(updatedTodos));
+  };
+
+  return (
+    <div>
+      <div>
+        <div>
+          <label htmlFor="title">title</label>
+          <input
+            name="title"
+            value={title}
+            onChange={(event) => {
+              setTitle(event.target.value);
+            }}
+          />
+        </div>
+        <div>
+          <label htmlFor="description">Description</label>
+          <input
+            name="description"
+            value={description}
+            onChange={(event) => {
+              setDescription(event.target.value);
+            }}
+          />
+        </div>
+        <div>
+          <label htmlFor="note">Note</label>
+          <input
+            name="note"
+            value={note}
+            onChange={(event) => {
+              setNote(event.target.value);
+            }}
+          />
+        </div>
+        <button onClick={addTodo}>Add todo</button>
+      </div>
+      <div>
+        <h2>Todos:</h2>
+        {todos.map((todo) => (
+          <div
+            key={todo.id}
+            className={`todo-item ${todo.completed ? "completed" : ""}`}
+          >
+            <p>Title: {todo.title}</p>
+            <p>Description: {todo.description}</p>
+            <p>Note: {todo.note}</p>
+            <button
+              onClick={() => {
+                deleteTodo(todo.id);
+              }}
+            >
+              Delete
+            </button>
+            {!todo.completed && (
+              <button
+                className="completed"
+                onClick={() => {
+                  completeTodo(todo.id);
+                }}
+              >
+                Complete
+              </button>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default App;

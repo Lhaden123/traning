@@ -1,0 +1,28 @@
+import './App.css'
+
+const Card = () => {
+  return (
+    <div class="shadow-3 p-2 rounded-sm">
+      <p>
+        <span class="star">●●●●●</span>
+      </p>
+      <p>Hey there!you have landed on my ronaldo page.</p>
+      <p class="bold text-lg">karsy</p>
+      <p>itskarsii10</p>
+      </div>
+  );
+};
+
+function App() {
+  return (
+    <div>
+      <Card/>
+    </div>
+  );
+}
+
+
+
+
+export default App;
+

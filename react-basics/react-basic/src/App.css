@@ -1,0 +1,175 @@
+/* .shadow-3 {
+  box-shadow: 3px 3px 3px 3px rgb(164, 162,162);
+}
+.p-2 {
+  padding-left: 2rem;
+  padding-top: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+}
+.rounded-sm {
+  border-radius: 0.25rem;
+}
+
+.star {
+  color: gold;
+  font-size: 2rem;
+}
+
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+} */
+.name-card {
+  padding: 10px;
+  border-radius: 4px;
+  background-color: aqua;
+  margin: 10px;
+  max-width: 200px;
+}
+.name-card.left {
+  text-align: left;
+  margin-left: 0;
+  margin-right: auto;
+}
+.name-card.right{
+  text-align: right;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+.flex{
+  display:flex;
+}
+.bio{
+  margin-left: 1rem;
+}
+h3{
+  color: white;
+}
+p{
+  color: white;
+}
+img{
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+/* Reset some basic styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Container */
+div {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Input fields and labels */
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Buttons */
+button {
+  padding: 8px 16px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button.completed {
+  background-color: #28a745;
+}
+
+button.completed:hover {
+  background-color: #218838;
+}
+
+/* Todo items */
+.todo-item {
+  background-color: rgb(21, 17, 17);
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Completed todos */
+.todo-item.completed {
+  background-color: blue;
+  color: #555;
+  text-decoration: line-through;
+}
+
+/* Section title */
+h2 {
+  margin-top: 40px;
+  color: #333;
+} 

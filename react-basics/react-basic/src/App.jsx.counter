@@ -1,0 +1,208 @@
+// import './App.css'
+
+// const Card = () => {
+//   return (
+//     <div class="shadow-3 p-2 rounded-sm">
+//       <p>
+//         <span class="star">★★★★★</span>
+//       </p>
+//       <p>
+//         with Nepalabs' Jira Automation,our team now focuses on what truly
+//         matters while repetitive tasks are handled seamlessly.
+//       </p>
+//       <p class="bold text-lg">Madhavi Solanki</p>
+//       <p>CEO - Founder,Cyphertree Technologies</p>
+//       </div>
+//   );
+// };
+
+// function App() {
+//   return (
+//     <div>
+//       <Card/>
+//     </div>
+//   );
+// }
+
+// import "./App.css";
+
+// const NameCard = (props) => {
+//   const {name,age,bio} = props;
+//   return (
+//     <div class="shadow-3 p-2 rounded-sm">
+//      <p>
+//    <span className="star">{name}</span>
+//      </p>
+//      <p>{age}</p>
+//      <p>{bio}</p>
+//     </div>
+//   );
+// };
+
+// function App() {
+//   return (
+//     <div>
+//       <NameCard name = "Tashi" age="24" bio="she is from trongsa"/>
+//       <NameCard name = "Jamyang" age="24" bio="she is from bumthang"/>
+//       <NameCard name = "Phurba" age="24" bio="she is from punakha"/>
+
+//     </div>
+//   );
+// };
+
+// import "./App.css";
+
+// const NameCard = ({name,age,bio,position="left"}) => {
+//   return (
+//     <div className={`shadow-3 name-card ${position}`}>
+//       <p>{name}</p>
+//       <p>{age}</p>
+//        <p>{bio}</p>
+//     </div>
+//   );
+// };
+// function App(){
+//   return (
+//     <div>
+//       <NameCard name = "Tashi" age="17" bio="she is from trongsa" position="left"/>
+//       <NameCard name = "Jamyang" age="18" bio="she is from bumthang"position="right"/>
+//       <NameCard name = "Phurba" age="20" bio="she is from punakha"position="left"/>
+//       <NameCard name = "seldenn" age="19" bio="she is from punakha"position="right"/>
+
+//     </div>
+//   );
+// };
+
+import { useState } from "react";
+import "./App.css";
+
+// const owner = 1;
+
+// const messages = [
+//   {
+//     senderId: 1,
+//     name: "Norbu",
+//     message:
+//       "karsii i told a joke so bad today,even my reflection looked disappointed.",
+//   },
+//   {
+//     senderId: 2,
+//     name: "karsii",
+//     message: "oh no...what was it?",
+//   },
+//   {
+//     senderId: 1,
+//     name: "Norbu",
+//     message: "why dont eggs tell jokes?because they did crack each other up!",
+//   },
+//   {
+//     senderId: 2,
+//     name: "karsii",
+//     message: "wow.that joke deserves jail time",
+//   },
+//   {
+//     senderId: 1,
+//     name: "Norbu",
+//     message: "rude!that was egg-cellent",
+//   },
+//   {
+//     senderId: 2,
+//     name: "karsii",
+//     message: "okay.i m logging off.you need help.",
+//   },
+// ];
+// const Message = ({ senderName, message, position = "left" }) => {
+//   return (
+//     <div className={`shadow-3 name-card ${position}`}>
+//       <p>{senderName}</p>
+//       <p>{message}</p>
+//     </div>
+//   );
+// };
+
+// function App() {
+//   return (
+//     <div>
+//       {messages.map((item, index) => {
+//         return (
+//           <Message
+//             key={`messages-${index}`}
+//             senderName={item.name}
+//             message={item.message}
+//             position={item.senderId === owner ? "right" : "left"}
+//           />
+//         );
+//       })}
+//     </div>
+//   );
+// // }
+// const students = [
+//   {
+//     studentId: 1,
+//     name: "Jamyang",
+//     age: 25,
+//     imageUrl:
+//       "https://th.bing.com/th/id/OIP.zxudpFBV1WfU0A9Nti3doQHaKX?cb=iwp2&rs=1&pid=ImgDetMain",
+//   },
+//   {
+//     studentId: 2,
+//     name: "Tashi",
+//     age: 21,
+//     imageUrl:
+//       "https://th.bing.com/th/id/OIP.OZ-5KsAMj89zTo01XYi2dAHaLI?cb=iwp2&rs=1&pid=ImgDetMain",
+//   },
+//   {
+//     studentId: 2,
+//     name: "Kunzang",
+//     age: 26,
+//     imageUrl:
+//       "https://th.bing.com/th/id/OIP.IGNf7GuQaCqz_RPq5wCkPgHaLH?cb=iwp2&rs=1&pid=ImgDetMain",
+//   },
+// ];
+// const InfoCard = ({ imageUrl, name, age }) => {
+//   return (
+//     <div className="flex">
+//       <img src={imageUrl} />
+//       <div className="bio">
+//         <h3>{name}</h3>
+//         <p>{age}</p>
+//       </div>
+//     </div>
+//   );
+// };
+// function App() {
+//   return (
+//     <div>
+//       {students.map((student) => {
+//         return (
+//           <InfoCard
+//             studentId={student.studentId}
+//             name={student.name}
+//             age={student.age}
+//             imageUrl={student.imageUrl}
+//           />
+//         );
+//       })}
+//     </div>
+//   );
+// }
+// export default App;
+
+// const InfoCard = { imageUrl, name, age };
+function App() {
+  const [count, changeCount] = useState(0);
+  return (
+    <div>
+      <p>The currennt count is{count}</p>
+      <button
+        onClick={() => {
+          changeCount(count + 1);
+        }}
+      >
+        +1
+      </button>
+    </div>
+  );
+}
+
+export default App;
